@@ -42,7 +42,7 @@ public class UserController {
         return userService.signIn(signInDto);
     }
 
-    @PostMapping("/updateUser")
+    @PutMapping("/updateUser")
     public ResponseDto updateUser(@RequestParam("token") String token, @RequestBody UserUpdateDto userUpdateDto){
         authenticationService.authenticate(token);
         return userService.updateUser(token, userUpdateDto);

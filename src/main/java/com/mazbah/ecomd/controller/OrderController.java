@@ -49,7 +49,7 @@ public class OrderController {
     }
 
     // Get all orders
-    @PostMapping("/")
+    @GetMapping("/")
     public ResponseEntity<List<Order>> getAllOrders(@RequestParam("token") String token){
         // Authenticate token
         authenticationService.authenticate(token);

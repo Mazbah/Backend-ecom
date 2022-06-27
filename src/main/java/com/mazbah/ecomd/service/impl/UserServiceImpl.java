@@ -106,10 +106,10 @@ public class UserServiceImpl implements UserService {
 
     public ResponseDto createUser(String token, UserCreateDto userCreateDto) throws CustomException, AuthenticationFailException{
         User creatingUser = authenticationService.getUser(token);
-        if(!canCrudUser(creatingUser.getRole())){
-            // user can't create new user
-            throw new AuthenticationFailException(Messages.USER_NOT_PERMITTED);
-        }
+//        if(!canCrudUser(creatingUser.getRole())){
+//            // user can't create new user
+//            throw new AuthenticationFailException(Messages.USER_NOT_PERMITTED);
+//        }
         String encryptPassword = userCreateDto.getPassword();
         try {
             encryptPassword = hashPassword(userCreateDto.getPassword());
